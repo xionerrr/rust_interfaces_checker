@@ -28,8 +28,10 @@ pub fn parse_directories(path: &str) -> eyre::Result<Vec<String>> {
     let other_error = ErrorEnum::OtherError.error_message();
 
     for entry in read_dir(path)?.filter_map(|e| e.ok()) {
-        directories.push(entry.path().to_string_lossy().into_owned())
+        directories.push(entry.path().to_string_lossy().into_owned());
     }
+
+    dbg!(&directories);
 
     if directories.len() <= 0 {
         let error_report = eyre::Report::msg(default_error.message);
