@@ -31,8 +31,6 @@ pub fn parse_directories(path: &str) -> eyre::Result<Vec<String>> {
         directories.push(entry.path().to_string_lossy().into_owned());
     }
 
-    dbg!(&directories);
-
     if directories.len() <= 0 {
         let error_report = eyre::Report::msg(default_error.message);
         return Err(error_report);
