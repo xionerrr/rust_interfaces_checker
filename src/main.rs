@@ -1,7 +1,8 @@
-use rust_scrn::Application;
+#![allow(unused)]
 
-pub fn main() -> eyre::Result<()> {
+use rust_scrn;
+
+fn main() -> eyre::Result<()> {
     let app = rust_scrn::create_app()?;
-    app.run()?;
     Ok(())
 }
