@@ -320,6 +320,7 @@ dependencies = [
  "config",
  "eyre",
  "serde",
+ "serde_json",
 ]
 
 [[package]]
